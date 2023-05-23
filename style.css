@@ -1,0 +1,105 @@
+body {
+  background-color: blueviolet;
+}
+
+h1 {
+  font-family: 'Rubik Glitch';
+  font-size: 50px;
+  border-color: black;
+}
+
+h2 {
+  font-family: 'Darumadrop One';
+}
+
+h1, h2 {
+  text-align: center;
+  color: aliceblue;
+}
+
+/* Estilos para la sección de productos */
+#productos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Añadido para que los productos se envuelvan en filas en pantallas pequeñas */
+}
+
+.producto {
+  width: 200px;
+  text-align: center;
+  margin: 20px;
+}
+
+.producto:hover {
+  background-color: #9c9a9a;
+  border-radius: 15px;
+}
+
+.producto img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.producto h3 {
+  margin-top: 10px;
+}
+
+.precio {
+  font-weight: bold;
+}
+
+/* Estilos para la sección del carrito */
+#carrito {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#carrito h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#listaCarrito {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#listaCarrito li {
+  margin-bottom: 5px;
+}
+
+#totalCarrito {
+  font-weight: bold;
+}
+
+#vaciarCarritoButton {
+  background-color: #000000;
+  color: #fffcfc;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos para ocultar el botón "Agregar al Carrito" en dispositivos móviles */
+@media (max-width: 600px) {
+  .agregarAlCarritoButton {
+    display: none;
+  }
+}
+
+.agregarAlCarritoButton.mostrar {
+  display: block;
+}
+
+
+  
+  
+  

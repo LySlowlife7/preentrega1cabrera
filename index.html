@@ -1,17 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
     <title>Trippy</title>
 </head>
-<body>
-    <h1>Trippy Ind</h1>
-    <h2>Remeras con Onda</h2>
-    
 
-<script src="/main.js"></script>
-</body>
+<body>
+    <h1>TRIPPY IND</h1>
+    <h2>REMERAS CON ONDA</h2>
+
+    <!-- inicio de los productos y su información -->
+    <style>
+    .producto {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    }
+    #carrito {
+    margin-top: 20px;
+    }
+    </style>
+    </head>
+
+    <body>
+        <div id="productos">
+            <div class="producto">
+                <img src="/assets/buzos.jpg" alt="Buzo">
+                <h3>BUZO</h3>
+                <p class="precio">$3000</p>
+                <button class="agregarCarrito">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="/assets/hanniball.jpg" alt="Remeras">
+                <h3>REMERAS</h3>
+                <p class="precio">$1500</p>
+                <button class="agregarCarrito">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="/assets/zapas.jpg" alt="zapatillas">
+                <h3>ZAPATILLAS</h3>
+                <p class="precio">$1500</p>
+                <button class="agregarCarrito">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="/assets/pantalon.jpg" alt="jean">
+                <h3>JEAN</h3>
+                <p class="precio">$1500</p>
+                <button class="agregarCarrito">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="listaCarrito">
+                <!-- aca se mostrarán los productos agregados al carrito -->
+            </ul>
+            <p id="totalCarrito">Total: $0</p>
+        </div>
+
+        <button id="vaciarCarritoButton">Vaciar Carrito</button>
+
+
+        <script src="/main.js"></script>
+    </body>
+
 </html>
