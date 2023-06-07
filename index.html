@@ -1,17 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/pngwing.com.png" type="img">
     <title>Trippy</title>
 </head>
-<body>
-    <h1>Trippy Ind</h1>
-    <h2>Remeras con Onda</h2>
-    
 
-<script src="/main.js"></script>
-</body>
-</html>
+<body> 
+    <img src="/assets/pngwing.com.png" alt="Logo" id="logo">
+    <h1>TRIPPY IND</h1>
+    <h2>ROPA CON ONDA</h2>
+     
+
+    <div id="app">
+        <div id="productos">
+            <div class="producto" v-for="producto in productosFiltrados" :key="producto.NOMBRE">
+                <img :src="producto.IMAGEN" :alt="producto.NOMBRE">
+                <h3>{{ producto.NOMBRE }}</h3>
+                <p class="precio">{{ producto.PRECIO }}</p>
+                <button class="agregarCarrito" @click="agregarAlCarrito(producto)">Agregar al Carrito</button>
+            </div>
+        </div>
+    
+        <div id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="listaCarrito">
+                <li v-for="producto in carrito" :key="producto.NOMBRE">
+                    {{ producto.NOMBRE }} - Precio: ${{ producto.PRECIO }}
+                </li>
+            </ul>
+            <p id="totalCarrito">Total: ${{ calcularTotalCarrito() }}</p>
+        </div>
+    
+        <button id="vaciarCarritoButton" @click="vaciarCarrito">Vaciar Carrito</button>
+    
+        <select v-model="filtroCategoria">
+            <option value="">Todas las categorías</option>
+            <option value="Ropa">Ropa</option>
+            <option value="Calzado">Calzado</option>
+        </select>
+        
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const listaCarrito = document.getElementById('listaCarrito');
+          const totalCarrito = document.getElementById('totalCarrito');
+          const agregarCarritoButtons = document.querySelectorAll('.agregarCarrito');
+          const vaciarCarritoButton = document.getElementById('vaciarCarritoButton');
+          let carrito = [];
+
+          new Vue({
+            el: '#app',
+            data: {
+              productos: [],
+              carrito: [],
+              filtroCategoria: ''
+            },
+            computed: {
+              productosFiltrados() {
+                if (this.filtroCategoria) {
+                  return this.productos.filter(producto => producto.CATEGORIA === this.filtroCategoria);
+                }
+                return this.productos;
+              }
+            },
+            mounted() {
+              this.cargarProductos();
+            },
+            methods: {
+              cargarProductos() {
+                // Carga los productos desde el archivo JSON local
+                fetch('productos.json')
+                  .then(response => response.json())
+                  .then(data => {
+                    this.productos = data;
+                  })
+                  .catch(error => {
+                    console.error('Error al cargar los productos:', error);
+                  });
+              },
+              agregarAlCarrito(producto) {
+                this.carrito.push(producto);
+              },
+              vaciarCarrito() {
+                this.carrito = [];
+              },
+              calcularTotalCarrito() {
+                let total = 0;
+                this.carrito.forEach(producto => {
+                  total += parseInt(producto.PRECIO);
+                });
+                return total;
+              }
+            }
+          });
+
+          // seccion evento al botón de "Vaciar Carrito"
+          vaciarCarritoButton.addEventListener('click', () => {
+            app.vaciarCarrito();
+          });
+        });
+    </script>

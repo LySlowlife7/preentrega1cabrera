@@ -1,0 +1,52 @@
+[
+  {
+    "NOMBRE": "BUZO",
+    "PRECIO": 3000,
+    "IMAGEN": "/assets/buzos.jpg",
+    "CATEGORIA": "Ropa"
+  },
+  {
+    "NOMBRE": "REMERAS",
+    "PRECIO": 1500,
+    "IMAGEN": "/assets/hanniball.jpg",
+    "CATEGORIA": "Ropa"
+  },
+  {
+    "NOMBRE": "JEAN",
+    "PRECIO": 5000,
+    "IMAGEN": "/assets/pantalon.jpg",
+    "CATEGORIA": "Ropa"
+  },
+  {
+    "NOMBRE": "ZAPATILLAS",
+    "PRECIO": 6000,
+    "IMAGEN": "/assets/zapas.jpg",
+    "CATEGORIA": "Calzado"
+  },
+  {
+    "NOMBRE": "BUZO",
+    "PRECIO": 3000,
+    "IMAGEN": "/assets/buzos.jpg",
+    "CATEGORIA": "Ropa"
+  },
+  {
+    "NOMBRE": "REMERAS",
+    "PRECIO": 1500,
+    "IMAGEN": "/assets/hanniball.jpg",
+    "CATEGORIA": "Ropa"
+  },
+  {
+    "NOMBRE": "JEAN",
+    "PRECIO": 5000,
+    "IMAGEN": "/assets/pantalon.jpg",
+    "CATEGORIA": "Ropa"
+  },
+  {
+    "NOMBRE": "ZAPATILLAS",
+    "PRECIO": 6000,
+    "IMAGEN": "/assets/zapas.jpg",
+    "CATEGORIA": "Calzado"
+  }
+
+
+]
